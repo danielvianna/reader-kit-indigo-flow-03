@@ -32,7 +32,7 @@ const StudyMode = () => {
       completedDate: "May 21, 2025",
     },
     {
-      title: "Graded Question 3",
+      title: "Graded Question 3 [Updated]",
       attempts: 3,
       questionPrompt: "How did William James's approach to psychology differ from Wundt and Titchener's?",
       options: [
