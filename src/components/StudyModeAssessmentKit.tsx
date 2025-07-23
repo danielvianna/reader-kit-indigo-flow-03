@@ -30,22 +30,22 @@ const StudyModeAssessmentKit: React.FC<StudyModeAssessmentKitProps> = ({
   const [showFlashcards, setShowFlashcards] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
   const flashcardsRef = useRef<HTMLDivElement>(null);
-  
+
   console.log('StudyModeAssessmentKit render - showVideo:', showVideo, 'showFlashcards:', showFlashcards);
-  
+
   const correctOption = options.find(option => option.isCorrect);
   const correctAnswerText = correctOption?.text || '';
-  
+
   // Topic names for each assignment
   const topicNames = [
     "Wundt's Contribution to Psychology",
     "Titchener and Structuralism",
-    "William James and Functionalism"
+    "William James and Functionalism [Updated]"
   ];
-  
+
   const topicName = topicNames[index] || "Psychology Concepts";
   const formattedTitle = `Graded Question ${index + 1} – ${topicName}`;
-  
+
   // Scroll into view when flashcards open
   useEffect(() => {
     if (showFlashcards && flashcardsRef.current) {
@@ -86,20 +86,19 @@ const StudyModeAssessmentKit: React.FC<StudyModeAssessmentKitProps> = ({
     console.log('handleFlashcardsClose called');
     setShowFlashcards(false);
   };
-  
+
   // Determine if kit should be expanded
   const isExpanded = showFlashcards || showVideo;
-  
+
   return (
-    <div className={`my-5 border-0 rounded-xl bg-tile-indigo p-6 assessment-kit study-mode-card font-open-sans transition-all duration-300 ${
-      isExpanded 
-        ? 'w-full max-w-none mx-0' 
+    <div className={`my-5 border-0 rounded-xl bg-tile-indigo p-6 assessment-kit study-mode-card font-open-sans transition-all duration-300 ${isExpanded
+        ? 'w-full max-w-none mx-0'
         : 'w-3/4 mx-auto'
-    }`}>
+      }`}>
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-md font-semibold text-chalk-white">{formattedTitle}</h3>
       </div>
-      
+
       {/* Green Completion Banner */}
       <div className="p-4 rounded-xl mb-4 transition-all duration-500 ease-in-out font-open-sans bg-accent-mentor text-chalk-white">
         <div className="flex items-center gap-2">
@@ -109,7 +108,7 @@ const StudyModeAssessmentKit: React.FC<StudyModeAssessmentKitProps> = ({
           </p>
         </div>
       </div>
-      
+
       {/* Question and Answer in Study Pack Style */}
       <div className="mb-6">
         <Card className="border border-white border-opacity-20 bg-white bg-opacity-10">
@@ -125,11 +124,11 @@ const StudyModeAssessmentKit: React.FC<StudyModeAssessmentKitProps> = ({
           </CardContent>
         </Card>
       </div>
-      
+
       {/* Updated Card-style Resources Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         {/* Watch Study Prep Video Card */}
-        <Card 
+        <Card
           className="bg-white border-0 shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer hover:scale-[1.02] rounded-2xl"
           onClick={handleVideoOpen}
         >
@@ -143,7 +142,7 @@ const StudyModeAssessmentKit: React.FC<StudyModeAssessmentKitProps> = ({
         </Card>
 
         {/* Review Flashcards Card */}
-        <Card 
+        <Card
           className="bg-white border-0 shadow-sm hover:shadow-lg transition-all duration-200 cursor-pointer hover:scale-[1.02] rounded-2xl"
           onClick={handleFlashcardsOpen}
         >
@@ -156,13 +155,13 @@ const StudyModeAssessmentKit: React.FC<StudyModeAssessmentKitProps> = ({
           </CardContent>
         </Card>
       </div>
-      
+
       {showFlashcards && (
         <div ref={flashcardsRef}>
           <FlashcardsInline onClose={handleFlashcardsClose} />
         </div>
       )}
-      
+
       {showVideo && (
         <VideoPlayerInline onClose={handleVideoClose} />
       )}
