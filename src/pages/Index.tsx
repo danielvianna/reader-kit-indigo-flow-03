@@ -45,7 +45,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header title="The History of Psychology" />
+      <Header title="The History of Psychology (Daniel)" />
       <div className="flex">
         <SideNav />
         <main className="flex-1 pt-16 pl-14 pb-0 max-w-4xl mx-auto">
