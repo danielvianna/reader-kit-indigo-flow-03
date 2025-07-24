@@ -6,7 +6,7 @@ interface HeaderProps {
   isStudyMode?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ title = "The History of Psychology", isStudyMode = false }) => {
+const Header: React.FC<HeaderProps> = ({ title = "The History of Psychology *Daniel Update*", isStudyMode = false }) => {
   const [completedCount, setCompletedCount] = useState(0);
   const totalAssessments = 3;
   
