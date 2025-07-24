@@ -8,7 +8,7 @@ const StudyMode = () => {
   // Sample assessment data for completed study mode
   const assessmentData = [
     {
-      title: "Graded Question 1",
+      title: "Graded Question 1A",
       attempts: 2,
       questionPrompt: "Which of the following best describes Wilhelm Wundt's contribution to psychology?",
       options: [
