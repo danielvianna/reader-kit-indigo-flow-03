@@ -9,7 +9,7 @@ const Index = () => {
   // Sample assessment data
   const assessmentData = [
     {
-      title: "Graded Question 1",
+      title: "Graded Question 1 (Daniel)",
       attempts: 3,
       questionPrompt: "Which of the following best describes Wilhelm Wundt's contribution to psychology?",
       options: [
